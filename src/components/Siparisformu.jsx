@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Siparisformu = () => {
+  const navigate = useNavigate();
+
   const MALZEME_FIYAT = 5;
 
   const [adet, setAdet] = useState(1);
@@ -38,6 +41,7 @@ const Siparisformu = () => {
       try {
         const response = await axios.post('https://reqres.in/api/pizza', formData);
         console.log('Sipariş başarılı:', response.data);
+        navigate('/siparis-onayi');
       } catch (error) {
         console.error('Sipariş hatası:', error);
       }
@@ -81,7 +85,7 @@ const Siparisformu = () => {
 
   return (
     <div style={{ backgroundColor: '#fff' }}>
-      {/* Header */}
+      {}
       <div style={{ backgroundColor: '#dc3545', color: 'white', padding: '20px 0' }}>
         <div className="text-center">
           <h1 style={{ margin: '0', fontSize: '24px' }}>Teknolojik Yemekler</h1>
@@ -89,9 +93,9 @@ const Siparisformu = () => {
         </div>
       </div>
 
-      {/* Main Content */}
+      {}
       <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
-        {/* Pizza Başlık ve Fiyat */}
+        {}
         <h2 style={{ fontSize: '24px', marginBottom: '10px' }}>Position Absolute Acı Pizza</h2>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
           <h3 style={{ fontSize: '20px', margin: '0' }}>85.50₺</h3>
@@ -101,12 +105,12 @@ const Siparisformu = () => {
           </div>
         </div>
         
-        {/* Pizza Açıklaması */}
+        {}
         <p style={{ color: '#6c757d', fontSize: '14px', marginBottom: '30px' }}>
           Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı bugday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir.. Küçük bir pizzaya bazen pizzetta denir.
         </p>
 
-        {/* Form */}
+        {}
         <Form onSubmit={handleSubmit}>
           <div className="row mb-4">
             <div className="col-md-6">
