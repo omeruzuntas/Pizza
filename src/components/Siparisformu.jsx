@@ -18,7 +18,6 @@ import insta6 from '../assets/insta/li-5.png';
 
 const Siparisformu = () => {
   const navigate = useNavigate();
-
   const MALZEME_FIYAT = 5;
 
   const [adet, setAdet] = useState(1);
@@ -54,7 +53,13 @@ const Siparisformu = () => {
       try {
         const response = await axios.post('https://reqres.in/api/pizza', formData);
         console.log('Sipariş başarılı:', response.data);
-        navigate('/siparis-onayi');
+        navigate('/siparis-onayi', { 
+          state: { 
+            formData,
+            malzemelerToplam: getMalzemelerToplam(),
+            genelToplam: getGenelToplam()
+          } 
+        });
       } catch (error) {
         console.error('Sipariş hatası:', error);
       }
@@ -187,7 +192,7 @@ const Siparisformu = () => {
                   <option value="">Hamur Kalınlığı</option>
                   <option value="İnce">İnce</option>
                   <option value="Orta">Orta</option>
-                  <option value="Kalın">Kalın</option>
+                  <option value="Kalin">Kalın</option>
                 </Form.Select>
               </Form.Group>
             </div>
@@ -203,25 +208,25 @@ const Siparisformu = () => {
                 <Form.Check 
                   type="checkbox" 
                   label="Pepperoni" 
-                  value="pepperoni"
+                  value="Pepperoni"
                   onChange={handleMalzemeChange}
                 />
                 <Form.Check 
                   type="checkbox" 
                   label="Sosis" 
-                  value="sosis"
+                  value="Sosis"
                   onChange={handleMalzemeChange}
                 />
                 <Form.Check 
                   type="checkbox" 
                   label="Kanada Jambonu" 
-                  value="jambon"
+                  value="Kanada Jambonu"
                   onChange={handleMalzemeChange}
                 />
                 <Form.Check 
                   type="checkbox" 
                   label="Tavuk Izgara" 
-                  value="tavuk"
+                  value="Tavuk Izgara"
                   onChange={handleMalzemeChange}
                 />
               </div>
@@ -229,25 +234,25 @@ const Siparisformu = () => {
                 <Form.Check 
                   type="checkbox" 
                   label="Domates" 
-                  value="domates"
+                  value="Domates"
                   onChange={handleMalzemeChange}
                 />
                 <Form.Check 
                   type="checkbox" 
                   label="Soğan" 
-                  value="sogan"
+                  value="Soğan"
                   onChange={handleMalzemeChange}
                 />
                 <Form.Check 
                   type="checkbox" 
                   label="Sucuk" 
-                  value="sucuk"
+                  value="Sucuk"
                   onChange={handleMalzemeChange}
                 />
                 <Form.Check 
                   type="checkbox" 
                   label="Sarımsak" 
-                  value="sarimsak"
+                  value="Sarımsak"
                   onChange={handleMalzemeChange}
                 />
               </div>
@@ -255,25 +260,25 @@ const Siparisformu = () => {
                 <Form.Check 
                   type="checkbox" 
                   label="Biber" 
-                  value="biber"
+                  value="Biber"
                   onChange={handleMalzemeChange}
                 />
                 <Form.Check 
                   type="checkbox" 
                   label="Jalepeno" 
-                  value="jalepeno"
+                  value="Jalepeno"
                   onChange={handleMalzemeChange}
                 />
                 <Form.Check 
                   type="checkbox" 
                   label="Ananas" 
-                  value="ananas"
+                  value="Ananas"
                   onChange={handleMalzemeChange}
                 />
                 <Form.Check 
                   type="checkbox" 
                   label="Kabak" 
-                  value="kabak"
+                  value="Kabak"
                   onChange={handleMalzemeChange}
                 />
               </div>
@@ -338,6 +343,7 @@ const Siparisformu = () => {
           </Button>
         </Form>
       </div>
+
       <footer style={{ 
         backgroundColor: '#292929',
         color: 'white',
@@ -365,6 +371,7 @@ const Siparisformu = () => {
               <span>+90 216 123 45 67</span>
             </div>
           </div>
+
           <div>
             <h3 style={{ 
               fontSize: '18px',
@@ -387,6 +394,7 @@ const Siparisformu = () => {
               <li>Position Absolute Acı Burger</li>
             </ul>
           </div>
+
           <div>
             <h3 style={{ 
               fontSize: '18px',
@@ -410,8 +418,6 @@ const Siparisformu = () => {
             </div>
           </div>
         </div>
-
-        {}
         <div style={{ 
           borderTop: '1px solid #404040',
           marginTop: '40px',
