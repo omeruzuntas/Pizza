@@ -1,9 +1,8 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 
 const SiparisOnayi = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const { formData, malzemelerToplam, genelToplam } = location.state || {};
 
@@ -24,6 +23,7 @@ const SiparisOnayi = () => {
           marginBottom: '60px'
         }}
       />
+
       <div style={{
         textAlign: 'center',
         color: 'white',
@@ -54,6 +54,7 @@ const SiparisOnayi = () => {
           backgroundColor: 'white',
           margin: '0 auto 40px'
         }} />
+
         <div style={{
           maxWidth: '400px',
           margin: '0 auto',

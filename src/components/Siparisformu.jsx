@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import formBanner from '../assets/form-banner.png';
 import logo from '../assets/logo.svg';
+import logoFooter from '../assets/logo-footer.svg';
 
 import iconLocation from '../assets/icons/icon-1.png';
 import iconMail from '../assets/icons/icon-2.png';
@@ -357,7 +358,7 @@ const Siparisformu = () => {
           alignItems: 'flex-start'
         }}>
           <div>
-            <img src={logo} alt="Logo" style={{ marginBottom: '20px' }} />
+            <img src={logoFooter} alt="Logo" style={{ marginBottom: '20px' }} />
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
               <img src={iconLocation} alt="" style={{ marginRight: '10px' }} />
               <span>34 Londonderry Road, İstanbul Türkiye</span>
@@ -388,10 +389,10 @@ const Siparisformu = () => {
             }}>
               <li style={{ marginBottom: '10px' }}>Terminal Pizza</li>
               <li style={{ marginBottom: '10px' }}>5 Kişilik Hackathon Pizza</li>
-              <li style={{ marginBottom: '10px' }}>useEffect Tavuklu Pizza</li>
+              <li style={{ marginBottom: '10px' }}> Tavuklu Pizza</li>
               <li style={{ marginBottom: '10px' }}>Beyaz Console Frosty</li>
               <li style={{ marginBottom: '10px' }}>Testler Geçti Mutlu Burger</li>
-              <li>Position Absolute Acı Burger</li>
+              <li> Absolute Acı Burger</li>
             </ul>
           </div>
 
@@ -418,6 +419,7 @@ const Siparisformu = () => {
             </div>
           </div>
         </div>
+
         <div style={{ 
           borderTop: '1px solid #404040',
           marginTop: '40px',
